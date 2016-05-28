@@ -1,5 +1,7 @@
 'use strict'
 
+const User = require('./User')
+
 class ShitTalkRequest {
     /**
      * 
@@ -36,9 +38,30 @@ class ShitTalkRequest {
         return this._textDescription
     }
 
+	/**
+	 *
+	 * @returns {string}
+	 * @private
+	 */
     _renderDescription() {
-        return `User: ${this._user.firstName} ${this._user.lastName} @${this._user.userName}\nNigga type: ${this._niggaType}\nUserId: ${this._user.id}`
+        return `@${this._user.userName} User: ${this._user.firstName} ${this._user.lastName}\nNigga type: ${this._niggaType}\nUserId: ${this._user.id}`
     }
+
+	/**
+	 *
+	 * @param {string} description
+	 * @returns {ShitTalkRequest|boolean}
+	 */
+	static fromDescription(description) {
+		const splitData = description.split(/ User: |@|Nigga type: |UserId: | /igm);
+
+		if (splitData.length !== 5) return false;
+
+		const user = new User(splitData[0], splitData[1], splitData[2], splitData[4]);
+		const type = splitData[3];
+
+		return new ShitTalkRequest(user, type);
+	}
 }
 
 module.exports = ShitTalkRequest

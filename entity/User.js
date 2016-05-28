@@ -3,7 +3,7 @@
 class User {
     /**
      *
-     * @param {string} userName
+     * @param {string|null} userName
      * @param {string}firstName
      * @param {string} lastName
      * @param {number} id

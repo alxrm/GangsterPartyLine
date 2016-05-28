@@ -4,10 +4,10 @@
   },
   "menus": {
     "niggaTypeChoosing": [
-      "Buf niggas", "Dark niggas", "Asian niggas",
-      "White niggas",  "Deaf niggas", "Classic niggas",
-      "Racist niggas", "Mystery niggas", "Psycho niggas",
-      "Dawg niggas", "Jewish niggas"
+      "Buf", "Dark", "Asian",
+      "White",  "Deaf", "Classic",
+      "Racist", "Mystery", "Psycho",
+      "Dawg", "Jewish"
     ]
   }
 }
